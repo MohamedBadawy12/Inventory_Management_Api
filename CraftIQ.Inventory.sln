@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35027.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftIQ.Inventory", "CraftIQ.Inventory\CraftIQ.Inventory.csproj", "{774DC9B1-E3C6-4486-8BA3-762770DC68C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftIQ.Inventory.Core", "CraftIQ.Inventory.Core\CraftIQ.Inventory.Core.csproj", "{48CFF6C4-993C-49D0-B8E0-0A171FA722D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftIQ.Inventory.Services", "CraftIQ.Inventory.Services\CraftIQ.Inventory.Services.csproj", "{1FF39525-CAF0-4F26-8467-2E195DE31EA0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftIQ.Inventory.Infrastructure", "CraftIQ.Inventory.Infrastructure\CraftIQ.Inventory.Infrastructure.csproj", "{E31C5289-8CEE-490E-89FD-10680348E243}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftIQ.Inventory.Aspire", "CraftIQ.Inventory.Aspire\CraftIQ.Inventory.Aspire.csproj", "{793FB632-7AE4-4A2F-A720-8EE675EC3EAD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftIQ.Inventory.Shared", "CraftIQ.Inventory.Shared\CraftIQ.Inventory.Shared.csproj", "{774B1293-440F-4484-A3AB-1F94155FD38D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{774DC9B1-E3C6-4486-8BA3-762770DC68C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774DC9B1-E3C6-4486-8BA3-762770DC68C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774DC9B1-E3C6-4486-8BA3-762770DC68C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774DC9B1-E3C6-4486-8BA3-762770DC68C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{48CFF6C4-993C-49D0-B8E0-0A171FA722D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48CFF6C4-993C-49D0-B8E0-0A171FA722D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48CFF6C4-993C-49D0-B8E0-0A171FA722D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48CFF6C4-993C-49D0-B8E0-0A171FA722D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1FF39525-CAF0-4F26-8467-2E195DE31EA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1FF39525-CAF0-4F26-8467-2E195DE31EA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1FF39525-CAF0-4F26-8467-2E195DE31EA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1FF39525-CAF0-4F26-8467-2E195DE31EA0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E31C5289-8CEE-490E-89FD-10680348E243}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E31C5289-8CEE-490E-89FD-10680348E243}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E31C5289-8CEE-490E-89FD-10680348E243}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E31C5289-8CEE-490E-89FD-10680348E243}.Release|Any CPU.Build.0 = Release|Any CPU
+		{793FB632-7AE4-4A2F-A720-8EE675EC3EAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{793FB632-7AE4-4A2F-A720-8EE675EC3EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{793FB632-7AE4-4A2F-A720-8EE675EC3EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{793FB632-7AE4-4A2F-A720-8EE675EC3EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{774B1293-440F-4484-A3AB-1F94155FD38D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{774B1293-440F-4484-A3AB-1F94155FD38D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{774B1293-440F-4484-A3AB-1F94155FD38D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{774B1293-440F-4484-A3AB-1F94155FD38D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A858921-4BC9-4780-A596-BC9C5BB67A43}
+	EndGlobalSection
+EndGlobal
