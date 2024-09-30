@@ -1,4 +1,5 @@
 using CraftIQ.Inventory.Infrastructure;
+using huzcodes.Extensions.Exceptions;
 namespace CraftIQ.Inventory
 {
     public class Program
@@ -16,6 +17,7 @@ namespace CraftIQ.Inventory
             //adding db context registeration
             var inventoryDbConnectionString = builder.Configuration.GetSection("ConnectionStrings:InventoryConnectionString");
             builder.Services.AddInventoryDbContext(inventoryDbConnectionString.Value!);
+            builder.Services.AddInfrastructureRegistrations();
 
             var app = builder.Build();
 
@@ -27,6 +29,8 @@ namespace CraftIQ.Inventory
             }
 
             app.UseHttpsRedirection();
+
+            app.AddExceptionHandlerExtension();
 
             app.UseAuthorization();
 
