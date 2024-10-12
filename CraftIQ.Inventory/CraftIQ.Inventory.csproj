@@ -19,6 +19,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CraftIQ.Inventory.Infrastructure\CraftIQ.Inventory.Infrastructure.csproj" />
+    <ProjectReference Include="..\CraftIQ.Inventory.Services\CraftIQ.Inventory.Services.csproj" />
+    <ProjectReference Include="..\CraftIQ.Inventory.Shared\CraftIQ.Inventory.Shared.csproj" />
   </ItemGroup>
 
 </Project>
