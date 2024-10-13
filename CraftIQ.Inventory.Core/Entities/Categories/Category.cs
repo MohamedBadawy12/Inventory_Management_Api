@@ -23,13 +23,12 @@ namespace CraftIQ.Inventory.Core.Entities.Categories
             ModifiedOn = DateTimeOffset.Now;
         }
 
-
-        //public void UpdateCategory(string name, string description, Guid modifiedBy)
-        //{
-        //    Name = name;
-        //    Description = description;
-        //    ModifiedBy = modifiedBy;
-        //    ModifiedOn = DateTimeOffset.Now;
-        //}
+        public void UpdateCategory(string name, string description, Guid modifiedBy)
+        {
+            Name = name;
+            Description = description;
+            ModifiedBy = modifiedBy;
+            ModifiedOn = DateTimeOffset.Now;
+        }
     }
 }

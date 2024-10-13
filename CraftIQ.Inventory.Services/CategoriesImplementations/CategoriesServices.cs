@@ -20,9 +20,13 @@ namespace CraftIQ.Inventory.Services.CategoriesImplementations
             return new CategoriesOperationsContract(oResult.Name, oResult.Description) as dynamic;
         }
 
-        public async ValueTask Delete(Guid ContractId)
+        public async ValueTask Delete(Guid CategorytId)
         {
-            throw new NotImplementedException();
+            var oReadByIdSpec = new ReadCategoryByIdSpecification(CategorytId);
+            var oResult = await _repository.FirstOrDefaultAsync(oReadByIdSpec);
+            if (oResult != null)
+                await _repository.DeleteAsync(oResult);
+            else throw new ResultException("You can't delete object that is not exit.", (int)HttpStatusCode.NotFound);
         }
 
         public async ValueTask<List<TResponse>> Read()
@@ -51,24 +55,27 @@ namespace CraftIQ.Inventory.Services.CategoriesImplementations
             else throw new ResultException("This object is not exit", (int)HttpStatusCode.NotFound);
         }
 
-        public async ValueTask<List<TResponse>> ReadByParentId(Guid parentContractId)
+        public async ValueTask Update(Guid CategorytId, TRequest contract)
         {
-            throw new NotImplementedException();
+            var oContract = contract as CategoriesOperationsContract;
+            var oReadByIdSpec = new ReadCategoryByIdSpecification(CategorytId);
+            var oResult = await _repository.FirstOrDefaultAsync(oReadByIdSpec);
+            if (oResult != null)
+            {
+                oResult.UpdateCategory(oContract!.Name, oContract.Description, Guid.NewGuid());
+                await _repository.UpdateAsync(oResult);
+            }
+            else throw new ResultException("This object is not exit", (int)HttpStatusCode.NotFound);
         }
 
-        public async ValueTask<TResponse> ReadSingleByParentId(Guid contractId, Guid parentContractId)
-        {
+        public async ValueTask<List<TResponse>> ReadByParentId(Guid parentContractId) =>
             throw new NotImplementedException();
-        }
 
-        public async ValueTask Update(Guid ContractId, TRequest contract)
-        {
+        public async ValueTask<TResponse> ReadSingleByParentId(Guid contractId, Guid parentContractId) =>
             throw new NotImplementedException();
-        }
 
-        public async ValueTask UpdateParentId(Guid ContractId, Guid parentContractId)
-        {
+        public async ValueTask UpdateParentId(Guid ContractId, Guid parentContractId) =>
             throw new NotImplementedException();
-        }
+
     }
 }
