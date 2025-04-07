@@ -15,7 +15,7 @@ namespace CraftIQ.Inventory.Endpoints.Categories.Update
     {
         private readonly InventoryFactory<CategoriesOperationsContract, CategoriesContract> _factory = factory;
 
-        [HttpPut(Routes.CategoriesRoutes.Updtate)]
+        [HttpPut(Routes.CategoriesRoutes.Update)]
         public override async Task<ActionResult> HandleAsync(UpdateCategoriesRequest request, CancellationToken cancellationToken = default)
         {
             var service = _factory.Build(nameof(Category));

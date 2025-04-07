@@ -1,6 +1,7 @@
 ﻿using CraftIQ.Inventory.Core.Entities.Categories;
 using CraftIQ.Inventory.Core.Entities.OrderDetails;
 using CraftIQ.Inventory.Core.Entities.Transactions;
+using CraftIQ.Inventory.Shared.Contracts.Products;
 
 
 namespace CraftIQ.Inventory.Core.Entities.Products
@@ -20,6 +21,7 @@ namespace CraftIQ.Inventory.Core.Entities.Products
         public decimal ProductionCost { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; } = new();
+
         //relation with Inventory
         public int InventoryId { get; set; }
         public Core.Entities.Inventories.Inventory Inventory { get; set; } = new();
@@ -30,33 +32,48 @@ namespace CraftIQ.Inventory.Core.Entities.Products
 
         // relation with order details
         public List<OrderDetail> OrderDetails { get; set; } = new();
-        //public Product(string name, string description, decimal unitPrice, float weight, float length,
-        //    float width, float height, decimal taxCost, decimal profitPerUnit, decimal productionCost)
-        //{
-        //    ProductId = Guid.NewGuid();
-        //    Name = name;
-        //    Description = description;
-        //    UnitPrice = unitPrice;
-        //    Weight = weight;
-        //    Length = length;
-        //    Width = width;
-        //    Height = height;
-        //    TaxCost = taxCost;
-        //    ProfitPerUnit = profitPerUnit;
-        //    ProductionCost = productionCost;
-        //    CreatedBy = new();
-        //    CreatedOn = DateTimeOffset.Now;
-        //    ModifiedBy = new();
-        //    ModifiedOn = DateTimeOffset.Now;
-        //}
+        public Product(string name, string description, decimal unitPrice, float weight, float length,
+            float width, float height, decimal taxCost, decimal profitPerUnit, decimal productionCost)
+        {
+            ProductId = Guid.NewGuid();
+            Name = name;
+            Description = description;
+            UnitPrice = unitPrice;
+            Weight = weight;
+            Length = length;
+            Width = width;
+            Height = height;
+            TaxCost = taxCost;
+            ProfitPerUnit = profitPerUnit;
+            ProductionCost = productionCost;
+            CreatedBy = new();
+            CreatedOn = DateTimeOffset.Now;
+            ModifiedBy = new();
+            ModifiedOn = DateTimeOffset.Now;
+        }
 
-        //public void SetCategory(Category category) =>
-        //    Category = category;
+        public void SetCategory(Category category) =>
+           Category = category;
 
-        //public void SetInventory(Inventories.Inventory inventory) =>
-        //    Inventory = inventory;
+        public void SetInventory(Inventories.Inventory inventory) =>
+            Inventory = inventory;
 
-        //public void SetTransaction(Transaction transaction) =>
-        //    Transaction = transaction;
+        public void SetTransaction(Transaction transaction) =>
+            Transaction = transaction;
+
+        public void UpdateProduct(ProductsOperationsContract product)
+        {
+            ModifiedOn = DateTimeOffset.Now;
+            Name = string.IsNullOrEmpty(product.Name) ? this.Name : product.Name;
+            Description = string.IsNullOrEmpty(product.Description) ? this.Description : product.Description;
+            UnitPrice = product.UnitPrice == 0 ? this.UnitPrice : product.UnitPrice;
+            Weight = product.Weight == 0 ? this.Weight : product.Weight;
+            Length = product.Length == 0 ? this.Length : product.Length;
+            Width = product.Width == 0 ? this.Width : product.Width;
+            Height = product.Height == 0 ? this.Height : product.Height;
+            TaxCost = product.TaxCost == 0 ? this.TaxCost : product.TaxCost;
+            ProfitPerUnit = product.ProfitPerUnit == 0 ? this.ProfitPerUnit : product.ProfitPerUnit;
+            ProductionCost = product.ProductionCost == 0 ? this.ProductionCost : product.ProductionCost;
+        }
     }
 }

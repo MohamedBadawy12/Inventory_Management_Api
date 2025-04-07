@@ -7,7 +7,19 @@
             public const string BaseUrl = "/category";
             public const string ReadById = BaseUrl + "/{categoryId}";
             public const string Delete = BaseUrl + "/{categoryId}";
-            public const string Updtate = BaseUrl + "/{categoryId}";
+            public const string Update = BaseUrl + "/{categoryId}";
+        }
+
+        public class ProductsRoutes
+        {
+            public const string BaseUrl = "/product";
+            public const string ReadById = BaseUrl + "/{productId}";
+            public const string Delete = BaseUrl + "/{productId}";
+            public const string Update = BaseUrl + "/{productId}";
+            // categories part
+            public const string ReadByCategoryId = CategoriesRoutes.ReadById + BaseUrl;
+            public const string ReadSingleByCategoryId = CategoriesRoutes.ReadById + ReadById;
+            public const string UpdateProductCategoryId = CategoriesRoutes.BaseUrl + ReadById;
         }
     }
 }

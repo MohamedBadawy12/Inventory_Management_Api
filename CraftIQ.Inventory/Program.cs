@@ -20,8 +20,10 @@ namespace CraftIQ.Inventory
             builder.Services.AddInventoryDbContext(inventoryDbConnectionString.Value!);
             builder.Services.AddInfrastructureRegistrations();
             builder.Services.AddServicesRegistrations();
+            builder.Services.AddLogging();
 
             var app = builder.Build();
+
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
