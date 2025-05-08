@@ -37,5 +37,19 @@
             public const string Delete = BaseUrl + "/{transactionId}";
             public const string Update = BaseUrl + "/{transactionId}";
         }
+        public class OrdersRoutes
+        {
+            public const string BaseUrl = "/Orders";
+            public const string ReadById = BaseUrl + "/{orderId}";
+            public const string Delete = BaseUrl + "/{orderId}";
+            public const string Update = BaseUrl + "/{orderId}";
+        }
+        public class OrderDetailsRoutes
+        {
+            public const string BaseUrl = "/OrderDetails";
+            public const string ReadById = BaseUrl + "/{orderDetailId}";
+            public const string Delete = BaseUrl + "/{orderDetailId}";
+            public const string Update = BaseUrl + "/{orderDetailId}";
+        }
     }
 }

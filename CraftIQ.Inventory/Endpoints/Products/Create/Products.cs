@@ -13,7 +13,7 @@ namespace CraftIQ.Inventory.Endpoints.Products.Create
     {
         private readonly InventoryFactory<ProductsOperationsContract, ProductsContract> _factory = factory;
         [HttpPost(Routes.ProductsRoutes.BaseUrl)]
-        public override async Task<ActionResult<CreateProductResponse>> HandleAsync(CreateProductRequest request, CancellationToken cancellationToken = default)
+        public override async Task<ActionResult<CreateProductResponse>> HandleAsync([FromBody] CreateProductRequest request, CancellationToken cancellationToken = default)
         {
             if (request == null)
                 throw new ResultException("request can't be null", (int)HttpStatusCode.BadRequest);

@@ -97,8 +97,6 @@ namespace CraftIQ.Inventory.Services.InventoriesImplementations
             throw new NotImplementedException();
         }
 
-
-
         public async ValueTask UpdateParentId(Guid ContractId, Guid parentContractId)
         {
             throw new NotImplementedException();
